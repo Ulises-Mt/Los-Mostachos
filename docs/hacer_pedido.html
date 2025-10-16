@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Mostachos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo-container">
+        <img src="imagenes/mostacho.png" alt="Logo" class="logo">
+        <h1>Los Mostachos</h1>
+    </div>
+
+    <nav class="nav-desktop">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="inventario.html">Agregar Inventario</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-toggle">&#9776;</div>
+
+    <nav class="nav-overlay">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Productos</a></li>
+            <li><a href="inventario.html">Agregar Inventario</a></li>
+        </ul>
+        <div class="close-menu">✕</div>
+    </nav>
+</header>
+
+<main class="order-container">
+    <h1>Hacer Nuevo Pedido</h1>
+    <p>Selecciona los productos y las cantidades para tu pedido.</p>
+
+    <div class="order-form-section">
+        <form id="order-form" class="order-form">
+            <div class="product-selection">
+                <h3>Sándwiches</h3>
+                <div class="product-item">
+                    <label for="sandwich-chilo">Sándwich Chilo:</label>
+                    <input type="number" id="sandwich-chilo" data-product-id="chilo" min="0" value="0">
+                </div>
+                <div class="product-item">
+                    <label for="sandwich-monchoso">Sándwich Monchoso:</label>
+                    <input type="number" id="sandwich-monchoso" data-product-id="monchoso" min="0" value="0">
+                </div>
+            </div>
+
+            <div class="product-selection">
+                <h3>Bebidas</h3>
+                <div class="product-item">
+                    <label for="bebida-coca">Coca-Cola:</label>
+                    <input type="number" id="bebida-coca" data-product-id="coca" min="0" value="0">
+                </div>
+                <div class="product-item">
+                    <label for="bebida-agua">Agua:</label>
+                    <input type="number" id="bebida-agua" data-product-id="agua" min="0" value="0">
+                </div>
+                <div class="product-item">
+                    <label for="bebida-horchata">Agua de Horchata:</label>
+                    <input type="number" id="bebida-horchata" data-product-id="horchata" min="0" value="0">
+                </div>
+            </div>
+
+            <button type="submit" class="calculate-order-btn">Calcular Pedido</button>
+        </form>
+    </div>
+
+    <div class="order-summary-section">
+        <h2>Resumen del Pedido</h2>
+        <div id="order-details">
+            <p>Aquí se mostrarán los detalles de tu pedido.</p>
+        </div>
+
+        <div id="materials-needed-section" style="display: none;">
+            <h3>Materiales Necesarios</h3>
+            <table class="materials-table">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Cantidad Requerida</th>
+                        <th>Unidad</th>
+                    </tr>
+                </thead>
+                <tbody id="materials-needed-body">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="inventory-check-section" style="display: none;">
+            <h3>Verificación de Inventario</h3>
+            <p id="inventory-status" class="feedback-message"></p>
+            <div id="missing-materials-list" class="missing-materials-list">
+                </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="js/script.js" defer></script>
+
+</body>
+</html>

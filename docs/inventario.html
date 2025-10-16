@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Mostachos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo-container">
+        <img src="imagenes/mostacho.png" alt="Logo" class="logo">
+        <h1>Los Mostachos</h1>
+    </div>
+
+    <nav class="nav-desktop">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="hacer_pedido.html">Hacer pedido</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="menu-toggle">&#9776;</div>
+
+    <nav class="nav-overlay">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Productos</a></li>
+            <li><a href="hacer_pedido.html">Hacer pedido</a></li>
+        </ul>
+        <div class="close-menu">✕</div>
+    </nav>
+</header>
+
+<main class="inventory-container">
+    <h1>Gestión de Inventario</h1>
+    <p>Actualiza las cantidades, agrega nuevos productos o elimina los existentes.</p>
+
+    <div class="table-wrapper">
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Paquetes en Almacén</th>
+                    <th>Cantidad por Paquete</th>
+                    <th>Unidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="inventory-body">
+                </tbody>
+        </table>
+    </div>
+
+    <div class="add-product-section">
+        <h2>Agregar Nuevo Producto</h2>
+        <form id="add-product-form" class="add-product-form">
+            <input type="text" id="product-name" placeholder="Nombre del producto" required>
+            <input type="number" id="product-packages" placeholder="N° de paquetes" min="0" required>
+            <input type="number" id="product-quantity" placeholder="Cantidad por paquete" min="0" required>
+            <select id="product-unit" required>
+                <option value="pz">Piezas (pz)</option>
+                <option value="gr">Gramos (gr)</option>
+                <option value="ml">Mililitros (ml)</option>
+                <option value="kg">Kilos (kg)</option>
+            </select>
+            <button type="submit">Agregar Producto</button>
+        </form>
+    </div>
+
+    <div class="save-section">
+        <button id="save-changes-btn" class="save-btn">Guardar Cambios</button>
+        <p id="feedback-message" class="feedback-message"></p>
+    </div>
+</main>
+
+<script src="js/script.js" defer></script>
+
+</body>
+</html>
